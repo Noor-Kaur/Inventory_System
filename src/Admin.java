@@ -47,6 +47,8 @@ public class Admin extends Customer
     }
 
 
+
+
     public static void LoggedinSuccess()
     {
         System.out.println("Logged IN");
@@ -58,6 +60,10 @@ public class Admin extends Customer
 
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
+
+        Product product = new Product();
+        Customer customer= new Customer();
+
         int AdminID;
         int AdminPWD;
         System.out.println("-----------------------------------");
@@ -65,6 +71,7 @@ public class Admin extends Customer
         AdminID=sc.nextInt();
         System.out.println("Enter Admin Password: ");
         AdminPWD=sc.nextInt();
+
         if(AdminID==AdminPWD && AdminID==12345)
         {
             LoggedinSuccess();
@@ -102,6 +109,7 @@ public class Admin extends Customer
                 else if(choice==2)
                 {
 
+
                 }
                 else if(choice==3)
                 {
@@ -112,10 +120,6 @@ public class Admin extends Customer
                 }
 //                System.out.println(product);
             }
-
-
-
-
 
         }
         else {

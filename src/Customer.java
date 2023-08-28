@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Customer extends Product
 {
@@ -12,10 +13,15 @@ public class Customer extends Product
     }
     static Product product=new Product();
     int ProductID=product.getProductID();
-    public static  void BuysProduct(int CustomerID,int ProductID){};
-    public static  void main2()
+    public static  void BuysProduct(){};
+
+
+    public ArrayList<Integer> DoesBuy(int CustomerID, int ProductID)
     {
-        System.out.println(product.ProductID);
+        ArrayList<Integer>detail=new ArrayList<>();
+        detail.add(CustomerID);
+        detail.add(ProductID);
+        return detail;
     }
 
 }
