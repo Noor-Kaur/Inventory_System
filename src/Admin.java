@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Admin extends Customer
@@ -11,8 +12,9 @@ public class Admin extends Customer
     public int ProductQTY;
     public int ProductPrice;
     public boolean Delivered;
+    public static boolean customersuccess=false;
     static ArrayList<ArrayList<String>>arr= new ArrayList<>();
-    static HashMap<Integer,ArrayList<Integer>>product=new HashMap<>();
+    static HashMap<Integer,ArrayList<Integer>>productdetials=new HashMap<>();
 
     Customer customer=new Customer();
 
@@ -35,7 +37,7 @@ public class Admin extends Customer
         ProductID=sc.nextInt();
         System.out.println("Product Quantity");
         ProductQTY=sc.nextInt();
-        System.out.println("Produc Price: ");
+        System.out.println("Product Price: ");
         ProductPrice=sc.nextInt();
         ProductID=ProductID;
         ProductQTY=ProductQTY;
@@ -43,8 +45,38 @@ public class Admin extends Customer
         ArrayList<Integer>details=new ArrayList<>();
         details.add(ProductQTY);
         details.add(ProductPrice);
-        product.put(ProductID,details);
+        productdetials.put(ProductID,details);
     }
+    public static void WelcomeCustomer()
+    {
+        Scanner sc= new Scanner(System.in);
+        String CustomerEmail="";
+        int CustomerID=0;
+        String CustomerPWD="";
+        System.out.println("Enter your Customer Login Details");
+        System.out.println("Customer ID: ");
+        CustomerID=sc.nextInt();
+        System.out.println("Customer Password: ");
+        CustomerPWD=sc.next();
+        CustomerAuthLogin(CustomerID,CustomerPWD);
+    }
+    public static boolean CustomerAuthLogin( int CustomerID, String CustomerPWD)
+    {
+        for(ArrayList<String> ent:arr)
+        {
+
+
+            if(Integer.parseInt(ent.get(1))==(CustomerID) && ent.get(2).equals(CustomerPWD) )
+            {
+                System.out.println("Customer "+ent.get(1)+" Logged in");
+                customersuccess=true;
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
 
 
@@ -64,13 +96,20 @@ public class Admin extends Customer
         Product product = new Product();
         Customer customer= new Customer();
 
-        int AdminID;
-        int AdminPWD;
+
+        int runone=1;
+        int AdminID = 0;
+        int AdminPWD=0;
         System.out.println("-----------------------------------");
         System.out.println("Enter Admin ID: ");
         AdminID=sc.nextInt();
         System.out.println("Enter Admin Password: ");
         AdminPWD=sc.nextInt();
+
+
+
+
+
 
         if(AdminID==AdminPWD && AdminID==12345)
         {
@@ -92,6 +131,7 @@ public class Admin extends Customer
                created=true;
             }
 
+
             while(true)
             {
                 System.out.println("1: Create Product: ");
@@ -108,7 +148,15 @@ public class Admin extends Customer
                 }
                 else if(choice==2)
                 {
+                    System.out.println("ProductID \t Product Qunaity \t  Product Price");
+                    for (Map.Entry<Integer, ArrayList<Integer>> entry : productdetials.entrySet()) {
+                        Integer key = entry.getKey();
+                        ArrayList<Integer> values = entry.getValue();
 
+                        System.out.print(key+"\t              "+values.get(0)+"\t                   "+values.get(1) );
+
+                        System.out.println();
+                    }
 
                 }
                 else if(choice==3)
@@ -124,6 +172,22 @@ public class Admin extends Customer
         }
         else {
             Error();
+        }
+
+        WelcomeCustomer();
+        if(customersuccess)
+        {
+            System.out.println("Logged in from Customer success");
+            System.out.println("ProductID \t Product Quantity \t  Product Price");
+            for (Map.Entry<Integer, ArrayList<Integer>> entry : productdetials.entrySet()) {
+                Integer key = entry.getKey();
+                ArrayList<Integer> values = entry.getValue();
+
+                System.out.print(key+"\t              "+values.get(0)+"\t                  "+values.get(1) );
+
+                System.out.println();
+            }
+            WanttoBuy();
         }
 
 

@@ -24,4 +24,5 @@ public class Customer extends Product
         return detail;
     }
 
+
 }
