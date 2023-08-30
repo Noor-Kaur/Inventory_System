@@ -14,9 +14,17 @@ public class Logistics extends Customer
 
         return arr;
     }
-    public  static void main(String args[])
+    public Logistics(int CustomerID)
     {
-        Customer customer=new Customer();
-
+        this.CustomerID=CustomerID;
     }
+   public  Logistics (int CustomerID, int ProductID)
+   {
+       this.CustomerID=CustomerID;
+       this.ProductID=ProductID;
+   }
+   public  void ShowLogistics()
+   {
+       System.out.println("The customer with ID: "+CustomerID+" bought the Product with ID+ "+ProductID);
+   }
 }
