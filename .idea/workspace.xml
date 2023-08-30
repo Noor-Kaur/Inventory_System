@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7958e829-c42a-4045-a6bc-e991976da0e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DBConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PrintMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Payment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +48,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DBConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DBConnector" />
+      <module name="Inventory_System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Logistics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Logistics" />
       <module name="Inventory_System" />
@@ -53,6 +65,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Admin" />
+        <item itemvalue="Application.DBConnector" />
         <item itemvalue="Application.Logistics" />
       </list>
     </recent_temporary>
